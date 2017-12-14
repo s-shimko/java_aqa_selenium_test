@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20515" started-at="2017-12-12T21:05:35Z" finished-at="2017-12-12T21:05:55Z">
+  <suite name="Default suite" duration-ms="20181" started-at="2017-12-14T20:48:07Z" finished-at="2017-12-14T20:48:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20515" started-at="2017-12-12T21:05:35Z" finished-at="2017-12-12T21:05:55Z">
+    <test name="Default test" duration-ms="20181" started-at="2017-12-14T20:48:07Z" finished-at="2017-12-14T20:48:27Z">
       <class name="by.htp.testng.study.NewTest">
-        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="BeforeSuite" is-config="true" duration-ms="17" started-at="2017-12-13T00:05:35Z" finished-at="2017-12-13T00:05:35Z">
+        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="BeforeSuite" is-config="true" duration-ms="17" started-at="2017-12-14T23:48:07Z" finished-at="2017-12-14T23:48:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeSuite -->
-        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="BeforeClass" is-config="true" duration-ms="12340" started-at="2017-12-13T00:05:35Z" finished-at="2017-12-13T00:05:47Z">
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="BeforeClass" is-config="true" duration-ms="13304" started-at="2017-12-14T23:48:07Z" finished-at="2017-12-14T23:48:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeClass -->
-        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="BeforeMethod" is-config="true" duration-ms="1" started-at="2017-12-13T00:05:47Z" finished-at="2017-12-13T00:05:47Z">
+        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2017-12-14T23:48:20Z" finished-at="2017-12-14T23:48:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BeforeMethod -->
-        <test-method status="PASS" signature="Test6()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="Test6" duration-ms="7773" started-at="2017-12-13T00:05:47Z" finished-at="2017-12-13T00:05:55Z">
+        <test-method status="PASS" signature="Test6()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="Test6" duration-ms="6486" started-at="2017-12-14T23:48:20Z" finished-at="2017-12-14T23:48:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test6 -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2017-12-13T00:05:55Z" finished-at="2017-12-13T00:05:55Z">
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2017-12-14T23:48:27Z" finished-at="2017-12-14T23:48:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="AfterClass()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterClass" is-config="true" duration-ms="362" started-at="2017-12-13T00:05:55Z" finished-at="2017-12-13T00:05:55Z">
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterClass" is-config="true" duration-ms="357" started-at="2017-12-14T23:48:27Z" finished-at="2017-12-14T23:48:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterClass -->
-        <test-method status="PASS" signature="AfterTest()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterTest" is-config="true" duration-ms="1" started-at="2017-12-13T00:05:55Z" finished-at="2017-12-13T00:05:55Z">
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterTest" is-config="true" duration-ms="0" started-at="2017-12-14T23:48:27Z" finished-at="2017-12-14T23:48:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterTest -->
-        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterSuite" is-config="true" duration-ms="1" started-at="2017-12-13T00:05:55Z" finished-at="2017-12-13T00:05:55Z">
+        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:by.htp.testng.study.NewTest@29ee9faa]" name="AfterSuite" is-config="true" duration-ms="1" started-at="2017-12-14T23:48:27Z" finished-at="2017-12-14T23:48:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterSuite -->

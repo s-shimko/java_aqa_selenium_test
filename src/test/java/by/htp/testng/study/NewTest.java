@@ -1,5 +1,7 @@
 package by.htp.testng.study;
 
+import static by.htp.testng.study.XpathVariables.*;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -52,11 +54,13 @@ public class NewTest {
 
 	@Test(enabled = false)
 	public void test1() {
+		
+		
 		System.out.println("Find Java");
 		driver.get("http://www.google.com");
-		WebElement el = driver.findElement(By.id("lst-ib"));
+		WebElement el = driver.findElement(By.xpath(GOOGLE_INPUT_SEARCH));
 		el.sendKeys("Java");
-		driver.findElement(By.name("btnK")).click();
+		driver.findElement(By.xpath(GOOGLE_BUTTON_SEARCH)).click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -76,14 +80,14 @@ public class NewTest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		WebElement header = driver.findElement(By.cssSelector(".header"));
-		driver.findElement(By.cssSelector(".b-mainnews__img")).click();
+		WebElement header = driver.findElement(By.xpath(TUTBY_HEADER));
+		driver.findElement(By.xpath(TUTBY_MAIN_NEWS)).click();
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		List<WebElement> elements = driver.findElements(By.cssSelector("#article_body > p"));
+		List<WebElement> elements = driver.findElements(By.xpath(TUTBY_PARAGRAPHS));
 		System.out.println(elements.size());
 	}
 
@@ -97,7 +101,7 @@ public class NewTest {
 			e.printStackTrace();
 		}
 
-		WebElement trudoustroystvo = driver.findElement(By.cssSelector("a[data-section='section-menu-50']"));
+		WebElement trudoustroystvo = driver.findElement(By.xpath(ITAC_TRUDOUSTROYSTVO));
 		Actions act = new Actions(driver);
 		act.moveToElement(trudoustroystvo).perform();
 
@@ -107,12 +111,12 @@ public class NewTest {
 			e.printStackTrace();
 		}
 
-		List<WebElement> menu = driver.findElements(By.cssSelector("section[data-section='section-menu-50'] li"));
+		List<WebElement> menu = driver.findElements(By.xpath(ITAC_TRUDOUSTROYSTVO_MENU));
 		for (WebElement menu_el : menu) {
 			System.out.println(menu_el.getText());
 		}
 
-		WebElement obuchenie = driver.findElement(By.cssSelector("a[data-section='section-menu-0']"));
+		WebElement obuchenie = driver.findElement(By.xpath(ITAC_OBUCHENIYE));
 		Actions act2 = new Actions(driver);
 		act2.moveToElement(obuchenie).perform();
 
@@ -122,7 +126,7 @@ public class NewTest {
 			e.printStackTrace();
 		}
 
-		List<WebElement> menu2 = driver.findElements(By.cssSelector("section[data-section='section-menu-0'] a"));
+		List<WebElement> menu2 = driver.findElements(By.xpath(ITAC_OBUCHENIYE_MENU));
 		WebElement menu_marketing = null;
 		for (WebElement menu_el : menu2) {
 			if (menu_el.getText().equals("Маркетинг и продажи")) {
@@ -144,38 +148,38 @@ public class NewTest {
 	public void Test5() {
 		System.out.println("Quizful personal info");
 		driver.get("http://www.quizful.net");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("page-title")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(QUIZFUL_PAGETITLE)));
 
-		driver.findElement(By.cssSelector("#user-panel a[href='/LoginAction.loginForm']")).click();
+		driver.findElement(By.xpath(QUIZFUL_LOGIN_LINK)).click();
 
-		WebElement login = driver.findElement(By.cssSelector("#login"));
-		WebElement password = driver.findElement(By.cssSelector("input[name='loginForm.password']"));
-		WebElement submit_button = driver.findElement(By.cssSelector("p.buttons .btn.btn-primary"));
+		WebElement login = driver.findElement(By.xpath(QUIZFUL_INPUT_LOGIN));
+		WebElement password = driver.findElement(By.xpath(QUIZFUL_INPUT_PASSWORD));
+		WebElement submit_button = driver.findElement(By.xpath(QUIZFUL_SUBMIT_BUTTON));
 
 		login.sendKeys("s_shimko");
 		password.sendKeys("brahman222");
 		submit_button.click();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href='/feed']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(QUIZFUL_LOGIN_MARK)));
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("b > a[href='/user/s_shimko']")));
-		WebElement profile = driver.findElement(By.cssSelector("b > a[href='/user/s_shimko']"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(QUIZFUL_PROFILE_BUTTON)));
+		WebElement profile = driver.findElement(By.xpath(QUIZFUL_PROFILE_BUTTON));
 		profile.click();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href='/ProfileAction.settings']")));
-		WebElement button_edit = driver.findElement(By.cssSelector("a[href='/ProfileAction.settings']"));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(QUIZFUL_EDIT_BUTTON)));
+		WebElement button_edit = driver.findElement(By.xpath(QUIZFUL_EDIT_BUTTON));
 		button_edit.click();
 
-		WebElement menu_personal = driver.findElement(By.cssSelector("#profile-personal-form .title"));
-		WebElement input_name = driver.findElement(By.name("personalForm.name"));
-		WebElement input_surname = driver.findElement(By.name("personalForm.surname"));
-		WebElement input_birthdate = driver.findElement(By.name("personalForm.birthyear"));
-		WebElement input_site = driver.findElement(By.name("personalForm.site"));
+		WebElement menu_personal = driver.findElement(By.xpath(QUIZFUL_MENU_PERSONAL));
+		WebElement input_name = driver.findElement(By.xpath(QUIZFUL_INPUT_NAME));
+		WebElement input_surname = driver.findElement(By.xpath(QUIZFUL_INPUT_SURNAME));
+		WebElement input_birthdate = driver.findElement(By.xpath(QUIZFUL_INPUT_BIRTHYEAR));
+		WebElement input_site = driver.findElement(By.xpath(QUIZFUL_INPUT_SITE));
 		String image_path = "D:\\Projects\\javaaqa\\info\\image.jpg";
-		WebElement input_avatar = driver.findElement(By.name("personalForm.avatar"));
-		WebElement input_company = driver.findElement(By.name("personalForm.company"));
-		WebElement textarea_about = driver.findElement(By.name("personalForm.about"));
-		WebElement button_save_personal_data = driver.findElement(By.name("personalForm.save"));
+		WebElement input_avatar = driver.findElement(By.xpath(QUIZFUL_INPUT_AVATAR));
+		WebElement input_company = driver.findElement(By.xpath(QUIZFUL_INPUT_COMPANY));
+		WebElement textarea_about = driver.findElement(By.xpath(QUIZFUL_TEXTAREA_ABOUT));
+		WebElement button_save_personal_data = driver.findElement(By.xpath(QUIZFUL_BUTTON_SAVE_PERSONAL_DATA));
 
 		input_avatar.sendKeys(image_path);
 		menu_personal.click();
@@ -192,7 +196,7 @@ public class NewTest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		WebElement button_edit2 = driver.findElement(By.cssSelector("a[href='/ProfileAction.settings']"));
+		WebElement button_edit2 = driver.findElement(By.xpath(QUIZFUL_EDIT_BUTTON));
 		button_edit2.click();
 
 		try {
@@ -201,11 +205,10 @@ public class NewTest {
 			e.printStackTrace();
 		}
 
-		WebElement menu_notifications = driver.findElement(By.cssSelector("#profile-notifications-form .title"));
-		WebElement checkbox_notifications_enabled = driver
-				.findElement(By.name("notificationsForm.notificationsEnabled"));
-		WebElement checkbox_delivery_enabled = driver.findElement(By.name("notificationsForm.deliveryEnabled"));
-		WebElement button_save_notifications = driver.findElement(By.name("notificationsForm.save"));
+		WebElement menu_notifications = driver.findElement(By.xpath(QUIZFUL_MENU_NOTIFICATIONS));
+		WebElement checkbox_notifications_enabled = driver.findElement(By.xpath(QUIZFUL_CHECKBOX_NOTIFICATIONS_ENABLED));
+		WebElement checkbox_delivery_enabled = driver.findElement(By.xpath(QUIZFUL_CHECKBOX_DELIVERY_ENABLED));
+		WebElement button_save_notifications = driver.findElement(By.xpath(QUIZFUL_BUTTON_SAVE_NOTIFICATIONS));
 
 		menu_notifications.click();
 		try {
@@ -217,12 +220,12 @@ public class NewTest {
 		checkbox_delivery_enabled.sendKeys(Keys.SPACE);
 		button_save_notifications.click();
 
-		WebElement button_edit3 = driver.findElement(By.cssSelector("a[href='/ProfileAction.settings']"));
+		WebElement button_edit3 = driver.findElement(By.xpath(QUIZFUL_EDIT_BUTTON));
 		button_edit3.click();
 
-		WebElement menu_privacy = driver.findElement(By.cssSelector("#profile-privacy-form .title"));
-		WebElement radiobutton_justme = driver.findElement(By.xpath(".//label[.='Только я']/input"));
-		WebElement button_save_privacy = driver.findElement(By.name("privacyForm.save"));
+		WebElement menu_privacy = driver.findElement(By.xpath(QUIZFUL_MENU_PRIVACY));
+		WebElement radiobutton_justme = driver.findElement(By.xpath(QUIZFUL_RADIOBUTTON_JUSTME));
+		WebElement button_save_privacy = driver.findElement(By.xpath(QUIZFUL_BUTTON_SAVE_PRIVACY));
 
 		menu_privacy.click();
 		try {
@@ -238,19 +241,19 @@ public class NewTest {
 	public void Test6() {
 		System.out.println("Registration Quizful");
 		driver.get("http://www.quizful.net");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("page-title")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(QUIZFUL_PAGETITLE)));
 		
-		WebElement reg_button = driver.findElement(By.cssSelector("a[href='/LoginAction.registration']"));
+		WebElement reg_button = driver.findElement(By.xpath(QUIZFUL_BUTTON_REGISTRATION));
 		reg_button.click();
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("registrationForm.login")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(QUIZFUL_INPUT_REGISTRATION_LOGIN)));
 		
-		WebElement login = driver.findElement(By.name("registrationForm.login"));
-		WebElement pass = driver.findElement(By.name("registrationForm.password"));
-		WebElement repass = driver.findElement(By.name("registrationForm.repassword"));
-		WebElement email = driver.findElement(By.name("registrationForm.email"));
-		WebElement input_captcha = driver.findElement(By.name("registrationForm.captcha"));
-		WebElement button_ok = driver.findElement(By.name("ok"));
+		WebElement login = driver.findElement(By.xpath(QUIZFUL_INPUT_REGISTRATION_LOGIN));
+		WebElement pass = driver.findElement(By.xpath(QUIZFUL_INPUT_REGISTRATION_PASSWORD));
+		WebElement repass = driver.findElement(By.xpath(QUIZFUL_INPUT_REGISTRATION_REPASSWORD));
+		WebElement email = driver.findElement(By.xpath(QUIZFUL_INPUT_REGISTRATION_EMAIL));
+		WebElement input_captcha = driver.findElement(By.xpath(QUIZFUL_INPUT_REGISTRATION_CAPTCHA));
+		WebElement button_ok = driver.findElement(By.xpath(QUIZFUL_BUTTON_REGISTRATION_OK));
 		
 		login.sendKeys("testasdf");
 		pass.sendKeys("testasdf");
@@ -265,13 +268,14 @@ public class NewTest {
 			e.printStackTrace();
 		}
 		
-		button_ok.click();		
+		button_ok.click();	
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(QUIZFUL_MESSAGE_REGISTRATION_ERROR)));
+		WebElement error = driver.findElement(By.xpath(QUIZFUL_MESSAGE_REGISTRATION_ERROR));
+		
+		String error_text = error.getText();
+		assertEquals(error_text, "Некорректный e-mail\nНеправильное число");
+		
 	}
 
 	@AfterClass
@@ -296,43 +300,3 @@ public class NewTest {
 	}
 
 }
-
-// package by.htp.testng.study;
-//
-// import org.testng.annotations.Test;
-// import org.testng.annotations.BeforeMethod;
-// import org.testng.annotations.AfterMethod;
-// import org.testng.annotations.BeforeClass;
-// import org.testng.annotations.AfterClass;
-// import org.testng.annotations.BeforeTest;
-// import org.testng.annotations.AfterTest;
-//
-// public class NewTest {
-// @Test
-// public void f() {
-// }
-// @BeforeMethod
-// public void beforeMethod() {
-// }
-//
-// @AfterMethod
-// public void afterMethod() {
-// }
-//
-// @BeforeClass
-// public void beforeClass() {
-// }
-//
-// @AfterClass
-// public void afterClass() {
-// }
-//
-// @BeforeTest
-// public void beforeTest() {
-// }
-//
-// @AfterTest
-// public void afterTest() {
-// }
-//
-// }

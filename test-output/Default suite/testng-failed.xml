@@ -5,10 +5,10 @@
     <classes>
       <class name="by.htp.testng.study.NewTest">
         <methods>
-          <include name="test3"/>
           <include name="BeforeClass"/>
           <include name="AfterClass"/>
           <include name="BeforeSuite"/>
+          <include name="Test6"/>
           <include name="AfterSuite"/>
           <include name="BeforeMethod"/>
           <include name="AfterTest"/>
